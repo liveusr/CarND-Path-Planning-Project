@@ -161,6 +161,7 @@ int main() {
             target_lane = 1;
           }
 
+          // if switching from one side lane to another side lane, switch via middle lane
           if((target_lane == 0 && lane == 2) || (target_lane == 2 && lane == 0))
           {
             target_lane = 1;
@@ -180,7 +181,7 @@ int main() {
             prepare_lane_switch--;
           }
 
-          if(check_car_s[lane] < 40)
+          if(check_car_s[lane] < 35)
           {
             ref_vel -= .448; //.224;
             if(ref_vel < check_car_speed[lane])
